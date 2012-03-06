@@ -1,10 +1,6 @@
 # will_paginate-bootstrap
 
-<<<<<<< HEAD
 ![Bootstrap Pagination Component](//github.com/nickpad/will_paginate-bootstrap/raw/master/pagination.png)
-=======
-![Bootstrap Pagination Component](//nickpad/will_paginate-bootstrap/raw/master/pagination.png)
->>>>>>> 01cedd9... fix image link
 
 This gem integrates the [Twitter Bootstrap](http://twitter.github.com/bootstrap/) [pagination component](http://twitter.github.com/bootstrap/components.html#pagination) with the [will_paginate](https://github.com/mislav/will_paginate) pagination gem.
 
