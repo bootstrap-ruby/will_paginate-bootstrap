@@ -1,5 +1,5 @@
 if defined?(ActionView)
-  require "bootstrap_pagination/actionview"
+  require "bootstrap_pagination/action_view"
 end
 
 if defined?(Sinatra)
