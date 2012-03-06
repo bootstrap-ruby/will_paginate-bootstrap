@@ -23,10 +23,10 @@ module BootstrapPagination
     protected
 
     def page_number(page)
-      unless page == current_page
-        tag('li', link(page, page, :rel => rel_value(page)))
-      else
+      if page == current_page
         tag('li', link(page, page), :class => 'active')
+      else
+        tag('li', link(page, page, :rel => rel_value(page)))
       end
     end
 

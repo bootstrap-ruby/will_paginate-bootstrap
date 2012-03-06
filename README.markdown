@@ -10,7 +10,7 @@ As with will_paginate itself, Rails and Sinatra are supported.
 
 ### Rails
 
-  1. Load the Bootstrap CSS in your HTML template.
+  1. Load the Bootstrap CSS in your template.
   3. `require "will_paginate/bootstrap"` (`config/initializers/will_paginate.rb` would be a good place to put this).
   2. In your view, `<%= will_paginate @collection, :renderer => WillPaginate::Rails %>`
   3. Done!
