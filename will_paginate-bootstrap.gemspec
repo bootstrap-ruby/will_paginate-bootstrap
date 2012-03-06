@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Nick Dainty"]
   s.email       = ["nick@npad.co.uk"]
   s.homepage    = "https://github.com/nickpad/will_paginate-bootstrap"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Integrates the Twitter Bootstrap pagination component with will_paginate}
+  s.description = %q{This gem integrates the Twitter Bootstrap pagination component with the will_paginate pagination gem. Supports Rails and Sinatra.}
 
   s.rubyforge_project = "will_paginate-bootstrap"
 
