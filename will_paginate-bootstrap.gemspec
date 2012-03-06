@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "will_paginate-bootstrap/version"
+require "bootstrap_pagination/version"
 
 Gem::Specification.new do |s|
   s.name        = "will_paginate-bootstrap"
-  s.version     = WillPaginate::Bootstrap::VERSION
+  s.version     = BootstrapPagination::VERSION
   s.authors     = ["Nick Dainty"]
   s.email       = ["nick@npad.co.uk"]
   s.homepage    = "https://github.com/nickpad/will_paginate-bootstrap"
@@ -18,7 +18,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
   s.add_runtime_dependency "will_paginate", ">= 3.0.0"
 end
