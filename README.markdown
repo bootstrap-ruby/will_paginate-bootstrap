@@ -1,0 +1,1 @@
+# will_paginate-bootstrap
