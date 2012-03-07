@@ -4,7 +4,7 @@ require "bootstrap_pagination/version"
 
 module BootstrapPagination
   # Contains functionality shared by all renderer classes.
-  module LinkRenderer
+  module BootstrapRenderer
     ELLIPSIS = '…'
 
     def to_html
