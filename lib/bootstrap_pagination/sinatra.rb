@@ -1,4 +1,4 @@
-require "will_paginate/view_helpers/action_view"
+require "will_paginate/view_helpers/sinatra"
 require "bootstrap_pagination/bootstrap_renderer"
 
 module BootstrapPagination
