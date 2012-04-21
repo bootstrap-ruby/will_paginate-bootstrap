@@ -6,6 +6,11 @@ This gem integrates the [Twitter Bootstrap](http://twitter.github.com/bootstrap/
 
 As with will_paginate itself, Rails and Sinatra are supported.
 
+## Install
+
+  * `gem install will_paginate-bootstrap`, *or*
+  * For projects using Bundler, add `gem 'will_paginate-bootstrap'` to your `Gemfile` (and then run `bundle install`).
+
 ## Usage
 
 ### Rails
