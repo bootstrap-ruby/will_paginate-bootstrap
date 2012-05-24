@@ -1,11 +1,9 @@
-# encoding: utf-8
-
 require "bootstrap_pagination/version"
 
 module BootstrapPagination
   # Contains functionality shared by all renderer classes.
   module BootstrapRenderer
-    ELLIPSIS = '…'
+    ELLIPSIS = '&hellip;'
 
     def to_html
       list_items = pagination.map do |item|
