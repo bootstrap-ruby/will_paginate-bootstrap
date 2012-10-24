@@ -22,9 +22,9 @@ module BootstrapPagination
 
     def page_number(page)
       if page == current_page
-        tag('li', link(page, page), :class => 'active')
+        tag('li', link(page, page, "data-page"=>page), :class => 'active')
       else
-        tag('li', link(page, page, :rel => rel_value(page)))
+        tag('li', link(page, page, "data-page"=>page, :rel => rel_value(page)))
       end
     end
 
@@ -44,7 +44,7 @@ module BootstrapPagination
 
     def previous_or_next_page(page, text, classname)
       if page
-        tag('li', link(text, page), :class => classname)
+        tag('li', link(text, page, "data-page"=>page), :class => classname)
       else
         tag('li', link(text, '#'), :class => "%s disabled" % classname)
       end
