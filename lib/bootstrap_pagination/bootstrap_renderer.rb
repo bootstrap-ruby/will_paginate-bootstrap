@@ -22,7 +22,7 @@ module BootstrapPagination
 
     def page_number(page)
       if page == current_page
-        tag('li', link(page, page), :class => 'active')
+        tag('li', tag('span', page), :class => 'active')
       else
         tag('li', link(page, page, :rel => rel_value(page)))
       end
@@ -46,7 +46,7 @@ module BootstrapPagination
       if page
         tag('li', link(text, page), :class => classname)
       else
-        tag('li', link(text, '#'), :class => "%s disabled" % classname)
+        tag('li', tag('span', text), :class => "%s disabled" % classname)
       end
     end
   end

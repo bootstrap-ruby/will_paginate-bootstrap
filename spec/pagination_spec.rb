@@ -67,6 +67,6 @@ describe "Bootstrap Renderer" do
   end
 
   it "has anchors within each list item" do
-    @html.css('ul li').each { |li| li.at_css('a').wont_be_nil }
+    @html.css('ul li').each { |li| li.at_css('a', 'span').wont_be_nil }
   end
 end
