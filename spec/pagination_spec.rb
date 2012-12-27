@@ -66,7 +66,11 @@ describe "Bootstrap Renderer" do
     @html.css('[rel~=next]').size.must_equal 2
   end
 
-  it "has anchors within each list item" do
-    @html.css('ul li').each { |li| li.at_css('a', 'span').wont_be_nil }
+  it "has an anchor within each non-active list item" do
+    @html.css('ul li:not(.active)').each { |li| li.at_css('a').wont_be_nil }
+  end
+
+  it "uses a span element for the active page" do
+    @html.at_css('ul li.active span').wont_be_nil
   end
 end
