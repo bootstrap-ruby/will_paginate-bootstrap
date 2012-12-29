@@ -4,7 +4,11 @@ source "http://rubygems.org"
 gemspec
 
 group :development do
-  gem 'rake'
-  gem 'nokogiri'
-  gem 'minitest'
+  gem "rake"
+  gem "nokogiri"
+  gem "minitest"
+end
+
+group :example_app do
+  gem "sinatra"
 end
