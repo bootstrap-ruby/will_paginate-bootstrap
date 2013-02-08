@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/nickpad/will_paginate-bootstrap)
 
-![Bootstrap Pagination Component](//github.com/nickpad/will_paginate-bootstrap/raw/master/pagination.png)
+![Bootstrap Pagination Component](https://raw.github.com/nickpad/will_paginate-bootstrap/master/pagination.png)
 
 This gem integrates the [Twitter Bootstrap](http://twitter.github.com/bootstrap/) [pagination component](http://twitter.github.com/bootstrap/components.html#pagination) with the [will_paginate](https://github.com/mislav/will_paginate) pagination gem.
 
