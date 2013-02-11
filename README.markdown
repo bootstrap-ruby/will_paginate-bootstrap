@@ -1,6 +1,6 @@
 # will_paginate-bootstrap
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/nickpad/will_paginate-bootstrap)
+[![Code Climate](https://codeclimate.com/github/nickpad/will_paginate-bootstrap.png)](https://codeclimate.com/github/nickpad/will_paginate-bootstrap)
 
 ![Bootstrap Pagination Component](https://raw.github.com/nickpad/will_paginate-bootstrap/master/pagination.png)
 
