@@ -1,3 +1,5 @@
+require 'will_paginate'
+
 if defined?(ActionView)
   require "bootstrap_pagination/action_view"
 end
