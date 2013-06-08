@@ -18,9 +18,9 @@ As with will_paginate itself, Rails and Sinatra are supported.
 ### Rails
 
   1. Load the Bootstrap CSS in your template.
-  2. In your view, use the `:renderer => BootstrapPagination::Rails` option with the `will_paginate` helper, for example:
+  2. In your view, use the `renderer: BootstrapPagination::Rails` option with the `will_paginate` helper, for example:
 
-`<%= will_paginate @collection, :renderer => BootstrapPagination::Rails %>`
+`<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>`
 
 ### Sinatra
 
@@ -28,7 +28,7 @@ As with will_paginate itself, Rails and Sinatra are supported.
   2. `require "will_paginate-bootstrap"` in your Sinatra app.
   3. In your view, use the `:renderer => BootstrapPagination::Sinatra` option with the `will_paginate` helper, for example:
 
-`<%= will_paginate @collection, :renderer => BootstrapPagination::Sinatra %>`
+`<%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>`
 
 ## Compatibility
 
