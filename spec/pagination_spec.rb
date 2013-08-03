@@ -50,6 +50,10 @@ describe "Bootstrap Renderer" do
     html.at_css('div.pagination ul').wont_be_nil
   end
 
+  it "has an unordered list with pagination class" do
+    html.at_css('ul.pagination').wont_be_nil
+  end
+
   it "has an active list item" do
     html.at_css('ul li.active').wont_be_nil
   end
