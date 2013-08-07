@@ -15,7 +15,7 @@ module BootstrapPagination
         end
       end
 
-      html_container(tag('ul', list_items.join(@options[:link_separator])))
+      html_container(tag('ul class="pagination"', list_items.join(@options[:link_separator])))
     end
 
     protected
