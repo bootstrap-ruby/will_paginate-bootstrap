@@ -15,7 +15,7 @@ module BootstrapPagination
         end
       end
 
-      html_container(tag('ul', list_items.join(@options[:link_separator])))
+      html_container(tag('ul', list_items.join(@options[:link_separator]), :class => 'pagination'))
     end
 
     protected
@@ -48,6 +48,10 @@ module BootstrapPagination
       else
         tag('li', tag('span', text), :class => "%s disabled" % classname)
       end
+    end
+
+    def html_container(html)
+      html
     end
   end
 end
