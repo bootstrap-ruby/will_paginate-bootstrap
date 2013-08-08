@@ -49,5 +49,9 @@ module BootstrapPagination
         tag('li', tag('span', text), :class => "%s disabled" % classname)
       end
     end
+
+    def html_container(html)
+      html
+    end
   end
 end

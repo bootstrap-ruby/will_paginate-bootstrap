@@ -42,12 +42,12 @@ describe "Bootstrap Renderer" do
     html.must_be_kind_of Nokogiri::HTML::DocumentFragment
   end
 
-  it "has an outer pagination div" do
-    html.at_css('div.pagination').wont_be_nil
+  it "doesn't have has an outer pagination div" do
+    html.at_css('div.pagination').must_be_nil
   end
 
   it "has an unordered list within the pagination div" do
-    html.at_css('div.pagination ul').wont_be_nil
+    html.at_css('div.pagination ul').must_be_nil
   end
 
   it "has an unordered list with pagination class" do
