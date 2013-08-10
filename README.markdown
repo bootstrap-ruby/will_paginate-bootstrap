@@ -20,7 +20,9 @@ As with will_paginate itself, Rails and Sinatra are supported.
   1. Load the Bootstrap CSS in your template.
   2. In your view, use the `renderer: BootstrapPagination::Rails` option with the `will_paginate` helper, for example:
 
-`<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>`
+```ruby
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+```
 
 ### Sinatra
 
@@ -28,13 +30,17 @@ As with will_paginate itself, Rails and Sinatra are supported.
   2. `require "will_paginate-bootstrap"` in your Sinatra app.
   3. In your view, use the `renderer: BootstrapPagination::Sinatra` option with the `will_paginate` helper, for example:
 
-`<%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>`
+```ruby
+<%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>
+```
 
 ## Bootstrap 3
 
 For Bootstrap 3, the markup required has changed slightly from version 2. You can pass the `bootstrap` option with a value >= 3 when calling `will_paginate` to generate Bootstrap 3 compatible markup. For example:
 
-`<%= will_paginate @collection, renderer: BootstrapPagination::Rails, bootstrap: 3 %>`
+```ruby
+<%= will_paginate @collection, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+```
 
 By default version 2 compatible markup will be generated.
 
