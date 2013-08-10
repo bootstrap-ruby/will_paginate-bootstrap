@@ -24,11 +24,12 @@ describe "Bootstrap Renderer" do
   let(:collection_size) { 15 }
   let(:page) { (collection_size / 2.0).to_i }
   let(:collection) { 1.upto(collection_size).to_a }
+  let(:version) { nil }
 
   let(:output) do
     will_paginate(
       collection.paginate(:page => page, :per_page => 1),
-      :renderer => MockRenderer
+      renderer: MockRenderer, bootstrap: version
     )
   end
 
@@ -40,14 +41,6 @@ describe "Bootstrap Renderer" do
 
   it "returns a string containing HTML" do
     html.must_be_kind_of Nokogiri::HTML::DocumentFragment
-  end
-
-  it "has an outer pagination div" do
-    html.at_css('div.pagination').wont_be_nil
-  end
-
-  it "has an unordered list within the pagination div" do
-    html.at_css('div.pagination ul').wont_be_nil
   end
 
   it "has an active list item" do
@@ -76,5 +69,27 @@ describe "Bootstrap Renderer" do
 
   it "uses a span element for the active page" do
     html.at_css('ul li.active span').wont_be_nil
+  end
+
+  describe "with markup for v2" do
+    it "has an outer pagination div" do
+      html.at_css('div.pagination').wont_be_nil
+    end
+
+    it "has an unordered list within the pagination div" do
+      html.at_css('div.pagination ul').wont_be_nil
+    end
+  end
+
+  describe "with markup for v3" do
+    let(:version) { 3 }
+
+    it "has no outer pagination div" do
+      html.at_css('div.pagination').must_be_nil
+    end
+
+    it "has an unordered list with the pagination class" do
+      html.at_css('ul.pagination').wont_be_nil
+    end
   end
 end
