@@ -25,11 +25,12 @@ describe "Bootstrap Renderer" do
   let(:page) { (collection_size / 2.0).to_i }
   let(:collection) { 1.upto(collection_size).to_a }
   let(:version) { nil }
+  let(:link_options) { nil}
 
   let(:output) do
     will_paginate(
       collection.paginate(:page => page, :per_page => 1),
-      renderer: MockRenderer, bootstrap: version
+      renderer: MockRenderer, bootstrap: version, link_options: link_options
     )
   end
 
@@ -90,6 +91,14 @@ describe "Bootstrap Renderer" do
 
     it "has an unordered list with the pagination class" do
       html.at_css('ul.pagination').wont_be_nil
+    end
+  end
+
+  describe "with link attribute specified" do
+    let(:link_options) { {"data-remote" => true} }
+
+    it "includes the link attribute" do
+      html.at_css('li.prev a')["data-remote"].must_equal "true"
     end
   end
 end
