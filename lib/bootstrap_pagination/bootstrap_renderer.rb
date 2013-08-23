@@ -22,13 +22,18 @@ module BootstrapPagination
       end
     end
 
+    def container_attributes
+      super.except(*[:link_options])
+    end
+
     protected
 
     def page_number(page)
+      link_options = @options[:link_options] || {}
       if page == current_page
         tag("li", tag("span", page), class: "active")
       else
-        tag("li", link(page, page, :rel => rel_value(page)))
+        tag("li", link(page, page, link_options.merge(rel: rel_value(page))))
       end
     end
 
@@ -47,8 +52,9 @@ module BootstrapPagination
     end
 
     def previous_or_next_page(page, text, classname)
+      link_options = @options[:link_options] || {}
       if page
-        tag("li", link(text, page), class: classname)
+        tag("li", link(text, page, link_options), class: classname)
       else
         tag("li", tag("span", text), class: "%s disabled" % classname)
       end
