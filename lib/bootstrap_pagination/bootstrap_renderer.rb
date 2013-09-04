@@ -31,7 +31,7 @@ module BootstrapPagination
     def page_number(page)
       link_options = @options[:link_options] || {}
       if page == current_page
-        tag("li", tag("span", page), class: "active")
+        tag("li", link(page, '#'), class: "active")
       else
         tag("li", link(page, page, link_options.merge(rel: rel_value(page))))
       end
@@ -56,7 +56,7 @@ module BootstrapPagination
       if page
         tag("li", link(text, page, link_options), class: classname)
       else
-        tag("li", tag("span", text), class: "%s disabled" % classname)
+        tag("li", link(text, '#'), class: "%s disabled" % classname)
       end
     end
   end
