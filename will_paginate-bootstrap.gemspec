@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/nickpad/will_paginate-bootstrap"
   s.summary     = %q{Integrates the Twitter Bootstrap pagination component with will_paginate}
   s.description = %q{This gem integrates the Twitter Bootstrap pagination component with the will_paginate pagination gem. Supports Rails and Sinatra.}
+  s.license     = "MIT"
 
   s.rubyforge_project = "will_paginate-bootstrap"
 
