@@ -72,26 +72,12 @@ describe "Bootstrap Renderer" do
     html.at_css('ul li.active span').wont_be_nil
   end
 
-  describe "with markup for v2" do
-    it "has an outer pagination div" do
-      html.at_css('div.pagination').wont_be_nil
-    end
-
-    it "has an unordered list within the pagination div" do
-      html.at_css('div.pagination ul').wont_be_nil
-    end
+  it "has no outer pagination div" do
+    html.at_css('div.pagination').must_be_nil
   end
 
-  describe "with markup for v3" do
-    let(:version) { 3 }
-
-    it "has no outer pagination div" do
-      html.at_css('div.pagination').must_be_nil
-    end
-
-    it "has an unordered list with the pagination class" do
-      html.at_css('ul.pagination').wont_be_nil
-    end
+  it "has an unordered list with the pagination class" do
+    html.at_css('ul.pagination').wont_be_nil
   end
 
   describe "with link attribute specified" do

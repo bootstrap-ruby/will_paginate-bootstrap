@@ -15,11 +15,7 @@ module BootstrapPagination
         end
       end.join(@options[:link_separator])
 
-      if @options[:bootstrap].to_i >= 3
-        tag("ul", list_items, class: "pagination")
-      else
-        html_container(tag("ul", list_items))
-      end
+      tag("ul", list_items, class: "pagination")
     end
 
     def container_attributes
@@ -30,10 +26,21 @@ module BootstrapPagination
 
     def page_number(page)
       link_options = @options[:link_options] || {}
+
       if page == current_page
         tag("li", tag("span", page), class: "active")
       else
         tag("li", link(page, page, link_options.merge(rel: rel_value(page))))
+      end
+    end
+
+    def previous_or_next_page(page, text, classname)
+      link_options = @options[:link_options] || {}
+
+      if page
+        tag("li", link(text, page, link_options), class: classname)
+      else
+        tag("li", tag("span", text), class: "%s disabled" % classname)
       end
     end
 
@@ -49,15 +56,6 @@ module BootstrapPagination
     def next_page
       num = @collection.current_page < @collection.total_pages && @collection.current_page + 1
       previous_or_next_page(num, @options[:next_label], "next")
-    end
-
-    def previous_or_next_page(page, text, classname)
-      link_options = @options[:link_options] || {}
-      if page
-        tag("li", link(text, page, link_options), class: classname)
-      else
-        tag("li", tag("span", text), class: "%s disabled" % classname)
-      end
     end
   end
 end
