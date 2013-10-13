@@ -6,7 +6,7 @@
 
 This gem integrates the [Twitter Bootstrap](http://twitter.github.com/bootstrap/) [pagination component](http://twitter.github.com/bootstrap/components.html#pagination) with the [will_paginate](https://github.com/mislav/will_paginate) pagination gem.
 
-As with will_paginate itself, Rails and Sinatra are supported.
+Just like will_paginate, Rails and Sinatra are supported.
 
 ## Install
 
@@ -34,17 +34,9 @@ As with will_paginate itself, Rails and Sinatra are supported.
 <%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>
 ```
 
-## Bootstrap 3
-
-For Bootstrap 3, the markup required has changed slightly from version 2. You can pass the `bootstrap` option with a value >= 3 when calling `will_paginate` to generate Bootstrap 3 compatible markup. For example:
-
-```ruby
-<%= will_paginate @collection, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
-```
-
-By default version 2 compatible markup will be generated.
-
 ## Compatibility
+
+Starting at version 1.0, this gem no longer supports Bootstrap 2.
 
 <table>
 	<tr>
@@ -56,7 +48,7 @@ By default version 2 compatible markup will be generated.
 		<td>>= 3.0.3</td>
 	</tr>
 	<tr>
-		<th>Bootstrap</th>
-		<td>>= 2.0.0</td>
+		<th>Twitter Bootstrap</th>
+		<td>>= 3.0.0</td>
 	</tr>
 </table>
