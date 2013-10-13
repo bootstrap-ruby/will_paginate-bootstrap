@@ -24,13 +24,14 @@ describe "Bootstrap Renderer" do
   let(:collection_size) { 15 }
   let(:page) { (collection_size / 2.0).to_i }
   let(:collection) { 1.upto(collection_size).to_a }
-  let(:version) { nil }
-  let(:link_options) { nil}
+  let(:link_options) { nil }
+  let(:class_opt) { nil }
 
   let(:output) do
     will_paginate(
       collection.paginate(:page => page, :per_page => 1),
-      renderer: MockRenderer, bootstrap: version, link_options: link_options
+      renderer: MockRenderer, link_options: link_options,
+      class: class_opt
     )
   end
 
@@ -72,25 +73,19 @@ describe "Bootstrap Renderer" do
     html.at_css('ul li.active span').wont_be_nil
   end
 
-  describe "with markup for v2" do
-    it "has an outer pagination div" do
-      html.at_css('div.pagination').wont_be_nil
-    end
-
-    it "has an unordered list within the pagination div" do
-      html.at_css('div.pagination ul').wont_be_nil
-    end
+  it "has no outer pagination div" do
+    html.at_css('div.pagination').must_be_nil
   end
 
-  describe "with markup for v3" do
-    let(:version) { 3 }
+  it "has an unordered list with the pagination class" do
+    html.at_css('ul.pagination').wont_be_nil
+  end
 
-    it "has no outer pagination div" do
-      html.at_css('div.pagination').must_be_nil
-    end
+  describe "when specifying a custom class" do
+    let(:class_opt) { "pagination-lg" }
 
-    it "has an unordered list with the pagination class" do
-      html.at_css('ul.pagination').wont_be_nil
+    it "applies the class to the ul" do
+      html.at_css("ul.pagination.pagination-lg").wont_be_nil
     end
   end
 
