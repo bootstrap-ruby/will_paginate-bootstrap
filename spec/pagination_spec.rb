@@ -24,13 +24,14 @@ describe "Bootstrap Renderer" do
   let(:collection_size) { 15 }
   let(:page) { (collection_size / 2.0).to_i }
   let(:collection) { 1.upto(collection_size).to_a }
-  let(:version) { nil }
-  let(:link_options) { nil}
+  let(:link_options) { nil }
+  let(:class_opt) { nil }
 
   let(:output) do
     will_paginate(
       collection.paginate(:page => page, :per_page => 1),
-      renderer: MockRenderer, bootstrap: version, link_options: link_options
+      renderer: MockRenderer, link_options: link_options,
+      class: class_opt
     )
   end
 
@@ -78,6 +79,14 @@ describe "Bootstrap Renderer" do
 
   it "has an unordered list with the pagination class" do
     html.at_css('ul.pagination').wont_be_nil
+  end
+
+  describe "when specifying a custom class" do
+    let(:class_opt) { "pagination-lg" }
+
+    it "applies the class to the ul" do
+      html.at_css("ul.pagination.pagination-lg").wont_be_nil
+    end
   end
 
   describe "with link attribute specified" do

@@ -15,7 +15,7 @@ module BootstrapPagination
         end
       end.join(@options[:link_separator])
 
-      tag("ul", list_items, class: "pagination")
+      tag("ul", list_items, class: ul_class)
     end
 
     def container_attributes
@@ -56,6 +56,10 @@ module BootstrapPagination
     def next_page
       num = @collection.current_page < @collection.total_pages && @collection.current_page + 1
       previous_or_next_page(num, @options[:next_label], "next")
+    end
+
+    def ul_class
+      ["pagination", @options[:class]].compact.join(" ")
     end
   end
 end
