@@ -52,3 +52,11 @@ Starting at version 1.0, this gem no longer supports Bootstrap 2.
 		<td>>= 3.0.0</td>
 	</tr>
 </table>
+
+## Legacy Bootstrap 2 Support
+
+Use version 0.2.5, in your GemFile use
+
+```ruby
+gem 'will_paginate-bootstrap', '0.2.5'
+```
