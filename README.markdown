@@ -34,6 +34,26 @@ Just like will_paginate, Rails and Sinatra are supported.
 <%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>
 ```
 
+### Bootstrap pagination as default renderer
+
+Overwrite the `will_paginate` method in your application helper, so you do not have to always explicitly set the 
+renderer to Bootstrap:
+  
+```ruby
+module ApplicationHelper
+  # Always use the Twitter Bootstrap pagination renderer
+  def will_paginate(collection_or_options = nil, options = {})
+    if collection_or_options.is_a? Hash
+      options, collection_or_options = collection_or_options, nil
+    end
+    unless options[:renderer]
+      options = options.merge :renderer => BootstrapPagination::Rails
+    end
+    super *[collection_or_options, options].compact
+  end
+end
+```
+
 ## Compatibility
 
 Starting at version 1.0, this gem no longer supports Bootstrap 2.
