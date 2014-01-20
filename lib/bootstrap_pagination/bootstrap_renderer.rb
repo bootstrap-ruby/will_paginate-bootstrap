@@ -6,6 +6,8 @@ module BootstrapPagination
     ELLIPSIS = "&hellip;"
 
     def to_html
+      @options[:page_links] = false if @options[:class].include?('pager')
+
       list_items = pagination.map do |item|
         case item
           when Fixnum
@@ -49,8 +51,9 @@ module BootstrapPagination
     end
 
     def previous_page
+      classname = @options[:class].include?('pager') ? 'previous' : 'prev'
       num = @collection.current_page > 1 && @collection.current_page - 1
-      previous_or_next_page(num, @options[:previous_label], "prev")
+      previous_or_next_page(num, @options[:previous_label], classname)
     end
 
     def next_page
@@ -59,7 +62,7 @@ module BootstrapPagination
     end
 
     def ul_class
-      ["pagination", @options[:class]].compact.join(" ")
+      [@options[:class]].compact.join(" ")
     end
   end
 end
