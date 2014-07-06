@@ -45,7 +45,7 @@ module BootstrapPagination
     end
 
     def gap
-      tag("li", link(ELLIPSIS, "#"), class: "disabled")
+      tag("li", tag("span", ELLIPSIS), class: "disabled")
     end
 
     def previous_page

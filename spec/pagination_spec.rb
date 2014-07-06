@@ -65,12 +65,33 @@ describe "Bootstrap Renderer" do
     html.css('[rel~=next]').size.must_equal 2
   end
 
-  it "has an anchor within each non-active list item" do
-    html.css('ul li:not(.active)').each { |li| li.at_css('a').wont_be_nil }
+  it "has an anchor within each non-active/non-disabled list item" do
+    html.css('ul li:not(.active):not(.disabled)').each { |li| li.at_css('a').wont_be_nil }
   end
 
   it "uses a span element for the active page" do
     html.at_css('ul li.active span').wont_be_nil
+  end
+
+  it 'uses a span to wrap the ellipsis' do
+    ellipsis = BootstrapPagination::BootstrapRenderer::ELLIPSIS
+    html.at_css('li.disabled span', text: ellipsis).wont_be_nil
+  end
+
+  describe 'when on the first page' do
+    let(:page) { 1 }
+
+    it 'uses a span element for the (disabled) previous button' do
+      html.at_css('li.disabled span', text: 'Previous Label').wont_be_nil
+    end
+  end
+
+  describe 'when on the last page' do
+    let(:page) { collection_size }
+
+    it 'uses a span element for the (disabled) next button' do
+      html.at_css('li.disabled span', text: 'Next Label').wont_be_nil
+    end
   end
 
   it "has no outer pagination div" do
