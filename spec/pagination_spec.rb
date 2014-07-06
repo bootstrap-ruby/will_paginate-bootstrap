@@ -78,15 +78,17 @@ describe "Bootstrap Renderer" do
     html.at_css('li.disabled span', text: ellipsis).wont_be_nil
   end
 
-  describe 'when on the first lage' do
+  describe 'when on the first page' do
     let(:page) { 1 }
+
     it 'uses a span element for the (disabled) previous button' do
       html.at_css('li.disabled span', text: 'Previous Label').wont_be_nil
     end
   end
 
-  describe 'when on the last lage' do
+  describe 'when on the last page' do
     let(:page) { collection_size }
+
     it 'uses a span element for the (disabled) next button' do
       html.at_css('li.disabled span', text: 'Next Label').wont_be_nil
     end
