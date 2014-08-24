@@ -12,12 +12,13 @@ Just like will_paginate, Rails and Sinatra are supported.
 
   * `gem install will_paginate-bootstrap`, *or*
   * For projects using Bundler, add `gem 'will_paginate-bootstrap'` to your `Gemfile` (and then run `bundle install`).
+  * You'll need to restart your server before you can make any use of this.
 
 ## Usage
 
 ### Rails
 
-  1. Load the Bootstrap CSS in your template.
+  1. Load the Bootstrap CSS in your template. (If you already installed twitter-bootstrap-rails, this should be done for you).
   2. In your view, use the `renderer: BootstrapPagination::Rails` option with the `will_paginate` helper, for example:
 
 ```ruby
