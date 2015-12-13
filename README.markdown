@@ -49,7 +49,7 @@ Starting at version 1.0, this gem no longer supports Bootstrap 2.
 	</tr>
 	<tr>
 		<th>Twitter Bootstrap</th>
-		<td>>= 3.0.0</td>
+		<td>>= 4.0.0</td>
 	</tr>
 </table>
 
