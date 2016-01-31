@@ -114,7 +114,7 @@ describe "Bootstrap Renderer" do
     let(:link_options) { {"data-remote" => true} }
 
     it "includes the link attribute" do
-      html.at_css('li.prev a')["data-remote"].must_equal "true"
+      html.at_css('li.previous a')["data-remote"].must_equal "true"
     end
   end
 end
