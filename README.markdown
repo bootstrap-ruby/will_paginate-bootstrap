@@ -1,5 +1,13 @@
 # will_paginate-bootstrap
 
+---
+
+__No longer maintained__
+
+I'm no longer using Bootstrap with Rails, so unfortunately am no longer accepting pull requests or maintaining this library. Feel free to fork this repository in order to publish your changes, or get in touch with me if you'd like to take over maintenance of the gem.
+
+---
+
 [![Code Climate](https://codeclimate.com/github/bootstrap-ruby/will_paginate-bootstrap.png)](https://codeclimate.com/github/bootstrap-ruby/will_paginate-bootstrap)
 
 ![Bootstrap Pagination Component](https://raw.github.com/bootstrap-ruby/will_paginate-bootstrap/master/pagination.png)
