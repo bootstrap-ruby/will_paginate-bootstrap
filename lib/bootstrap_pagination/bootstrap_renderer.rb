@@ -50,7 +50,7 @@ module BootstrapPagination
 
     def previous_page
       num = @collection.current_page > 1 && @collection.current_page - 1
-      previous_or_next_page(num, @options[:previous_label], "prev")
+      previous_or_next_page(num, @options[:previous_label], "previous")
     end
 
     def next_page
@@ -59,7 +59,8 @@ module BootstrapPagination
     end
 
     def ul_class
-      ["pagination", @options[:class]].compact.join(" ")
+      base_class = (@options[:page_links]) ? "pagination" : "pager"
+      [base_class, @options[:class]].compact.join(" ")
     end
   end
 end
