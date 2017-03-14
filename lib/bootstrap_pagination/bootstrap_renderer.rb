@@ -8,7 +8,7 @@ module BootstrapPagination
     def to_html
       list_items = pagination.map do |item|
         case item
-          when Fixnum
+          when 0.class
             page_number(item)
           else
             send(item)
